@@ -1,0 +1,15 @@
+extends ../base/layout
+
+block data
+  //- include ../data/...
+
+block variables
+  - var title = "Главная страница"
+  - var hasHeader = true
+  - var hasFooter = true
+  - var currentPage = ""
+
+block main
+  main
+    .container
+      h1 Main
