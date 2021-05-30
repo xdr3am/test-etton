@@ -1,15 +1,13 @@
 import {setupModal} from '../utils/modal';
 
 const modals = document.querySelectorAll('.modal');
-const modalFeedback = document.querySelector('.modal--feedback');
-const modalFeedbackBtns = document.querySelectorAll('[data-modal="feedback"]');
+const modalForm = document.querySelector('.modal--form');
+const modalFormBtns = document.querySelectorAll('[data-modal="form"]');
 const modalSuccess = document.querySelector('.modal--success');
 const modalSuccessBtns = document.querySelectorAll('[data-modal="success"]');
-const modalSubmission = document.querySelector('.modal--submission');
 
 // аргументы setupModal(modal, closeCallback, modalBtns, openCallback, noPrevDefault, preventScrollLock)
-// возможна инициализация только с первыми аргументом,
-// если вам нужно открывать модалку в другом месте под какими-нибудь условиями
+// возможна инициализация только с первыми аргументом
 const initModals = () => {
   // фикс для редких случаев, когда модалка появляется при загрузке страницы
   window.addEventListener('load', () => {
@@ -22,8 +20,8 @@ const initModals = () => {
     }
   });
 
-  if (modalFeedback && modalFeedbackBtns.length) {
-    setupModal(modalFeedback, false, modalFeedbackBtns, false, false);
+  if (modalForm && modalFormBtns.length) {
+    setupModal(modalForm, false, modalFormBtns);
   }
   if (modalSuccess && modalSuccessBtns.length) {
     setupModal(modalSuccess, false, modalSuccessBtns);

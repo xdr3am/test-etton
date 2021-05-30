@@ -1,0 +1,24 @@
+extends ../base/layout
+
+block data
+  include ../data/cards
+
+block variables
+  - var title = "Карточки"
+  - var hasHeader = true
+  - var hasFooter = true
+  - var currentPage = "Карточки"
+
+block main
+  main
+    h1.visually-hidden Карточки
+    section.cards.container
+      +renderBtn("add", "pink", "Add item", "form")
+      ul.cards__list
+        each card in cardList
+          li.cards__item
+            +renderCard(card.title, card.image, card.text)
+
+block modals
+  +modal("modal--form")
+    +modal-form()

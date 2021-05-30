@@ -40,9 +40,7 @@
 }
 
 .scroll-lock {
-  position: fixed;
-
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .btn-reset {

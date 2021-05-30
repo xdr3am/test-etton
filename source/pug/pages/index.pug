@@ -1,15 +1,19 @@
 extends ../base/layout
 
 block data
-  //- include ../data/...
 
 block variables
   - var title = "Главная страница"
   - var hasHeader = true
   - var hasFooter = true
-  - var currentPage = ""
+  - var currentPage = "Главная"
 
 block main
   main
-    .container
-      h1 Main
+    section.main-page.container
+      h1.visually-hidden Главная страница
+      +renderBtn("add", "pink", "Add item", "form")
+
+block modals
+  +modal("modal--form")
+    +modal-form()

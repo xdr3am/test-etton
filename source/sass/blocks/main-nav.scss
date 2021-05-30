@@ -1,0 +1,122 @@
+.main-nav {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: -350px;
+  bottom: 0;
+  width: 300px;
+  padding: 150px 0;
+  overflow-y: auto;
+  background-color: $color-beige;
+  box-shadow: 0 0 35px 3px $color-black;
+  transition: $default-transition-settings;
+  visibility: hidden;
+
+  @include viewport--sm {
+    left: -130%;
+    width: 100%;
+    padding: 120px 0;
+  }
+
+  &--show {
+    left: 0;
+    visibility: visible;
+  }
+}
+
+.main-nav__btn-close {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  cursor: pointer;
+  outline-color: $color-default-black;
+  user-select: none;
+
+  @include viewport--sm {
+    left: 10px;
+  }
+
+  svg {
+    fill: $color-pink;
+    transition: $default-transition-settings;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: $color-font;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.main-nav__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0 30px;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.main-nav li {
+  padding: 10px 0;
+}
+
+.main-nav__link {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-font;
+  background-color: $color-beige;
+  outline: none;
+  user-select: none;
+
+  &--active {
+    color: $color-pink;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 2px;
+    background-color: $color-font;
+    transition: width $default-transition-settings;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: $color-font;
+    transition: width $default-transition-settings;
+  }
+}
+
+.main-nav__link[href$="html"]:hover::before,
+.main-nav__link[href$="html"]:focus::before,
+.main-nav__link[href$="html"]:hover::after,
+.main-nav__link[href$="html"]:focus::after {
+  width: 50%;
+}
+
+.main-nav__link[href$="html"]:active {
+  opacity: 0.3;
+}

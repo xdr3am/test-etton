@@ -1,0 +1,46 @@
+.btn {
+  padding: 10px 25px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  border-radius: 30px;
+  transition: $default-transition-settings;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+
+  &--pink {
+    color: $color-font;
+    background-color: $color-pink;
+
+    &:hover,
+    &:focus {
+      background-color: $color-default-white;
+      box-shadow: 0 0 5px 5px $color-pink;
+    }
+  }
+
+  &--green {
+    color: $color-default-white;
+    background-color: $color-green;
+
+    &:hover,
+    &:focus {
+      background-color: $color-default-white;
+      box-shadow: 0 0 5px 5px $color-green;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &--add {
+    min-width: 250px;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

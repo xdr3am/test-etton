@@ -1,0 +1,111 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-beige;
+  border-radius: 30px;
+  padding: 20px 0;
+  text-decoration: none;
+  transition: $default-transition-settings;
+  outline: none;
+}
+
+.card__title {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  font-size: 30px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.card__image-container {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: $default-transition-settings;
+  }
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 5px $color-pink;
+}
+
+.card:hover img,
+.card:focus img {
+  transform: scale(1.2);
+}
+
+.card:hover .card__read-more:before,
+.card:hover .card__read-more:after,
+.card:focus .card__read-more:before,
+.card:focus .card__read-more:after {
+  width: 50%;
+}
+
+.card__description {
+  margin: 20px;
+
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  box-orient: vertical;
+}
+
+.card__read-more {
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $color-font;
+  text-decoration: none;
+  outline: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 1px;
+    background-color: $color-font;
+    transition: width $default-transition-settings;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: $color-font;
+    transition: width $default-transition-settings;
+  }
+}
+
+.card__read-more:hover::before,
+.card__read-more:focus::before,
+.card__read-more:hover::after,
+.card__read-more:focus::after {
+  width: 50%;
+}
+
+.card__read-more:active {
+  opacity: 0.3;
+}

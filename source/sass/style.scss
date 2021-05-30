@@ -12,6 +12,16 @@
 @import "global/utils";
 @import "global/container";
 @import "global/text";
+@import "global/btn";
 
 // Blocks
 //---------------------------------
+
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/main-nav";
+@import "blocks/main-page";
+@import "blocks/modal";
+@import "blocks/form";
+@import "blocks/cards";
+@import "blocks/card";

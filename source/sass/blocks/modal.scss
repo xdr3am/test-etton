@@ -37,6 +37,7 @@
     width: 100%;
     min-height: 100%;
     padding: 60px 40px;
+    box-sizing: border-box;
 
     @include viewport--sm {
       padding: 60px 16px;
@@ -57,21 +58,11 @@
   &__content {
     position: relative;
 
-    width: 300px;
-    padding: 40px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
 
-    background-color: $color-default-white;
-
-    @include viewport--sm {
-      width: 100%;
-      padding: 80px 40px;
-    }
-  }
-
-  &__close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    background-color: $color-beige;
   }
 
   &--responsive {

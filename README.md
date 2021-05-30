@@ -1,3 +1,6 @@
+## Опубликованная версия
+<a href="https://xdr3am.github.io/test-etton/build/index.html">Перейти</a>
+
 # Gulp template
 ## Основные команды для работы
 * Установка - `npm i`

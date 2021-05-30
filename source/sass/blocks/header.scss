@@ -1,0 +1,56 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-pink;
+  box-sizing: border-box;
+}
+
+.header__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @include viewport--sm {
+    justify-content: flex-end;
+  }
+}
+
+.header__logo {
+  transition: $default-transition-settings;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.5);
+  }
+}
+
+.header__burger {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translate(0, -50%);
+  outline-color: $color-default-white;
+  cursor: pointer;
+
+  @include viewport--sm {
+    left: 10px;
+  }
+
+  svg {
+    fill: $color-default-white;
+    transition: $default-transition-settings;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: $color-font;
+  }
+}

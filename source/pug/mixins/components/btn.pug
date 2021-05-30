@@ -1,0 +1,5 @@
+mixin renderBtn(btnClass, btnMod, text, data)
+  if (data)
+    button(class="btn btn-reset btn--" + btnClass + " btn--" + btnMod, type="button", data-modal= data)= text
+  else
+    button(class="btn btn-reset btn--" + btnClass + " btn--" + btnMod,, type="button")= text

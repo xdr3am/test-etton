@@ -1,4 +1,31 @@
 mixin header()
+  -
+    var headerLinks = [
+      {
+        text: "Главная",
+        href: "index.html",
+      },
+      {
+        text: "Карточки",
+        href: "card-list.html",
+      },
+    ]
+
   header
-    .header.container
-      h2 Header
+    .header
+      .header__wrapper.container
+        a(href="index.html").header__logo
+          +icon("logo", "50", "50")
+      button(type="button").header__burger.btn-reset
+        +icon("burger", "70", "70")
+    .main-nav
+      ul.main-nav__list
+        each link in headerLinks
+          if(link.text === currentPage)
+            li
+              a.main-nav__link.main-nav__link--active= link.text
+          else
+            li
+              a.main-nav__link(href=link.href)= link.text
+      button(type="button", title="Закрыть меню").main-nav__btn-close.btn-reset
+        +icon("cross", "60", "60")

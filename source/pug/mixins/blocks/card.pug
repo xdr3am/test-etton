@@ -1,0 +1,9 @@
+mixin renderCard(title, image, text)
+  a(href="#").card
+    h3.card__title= title
+    .card__image-container
+      picture
+        +webp("content", image)
+        +img("content", image, "png", "200", "200", title)
+    p.card__description= text
+    span.card__read-more read more

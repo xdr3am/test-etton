@@ -1,0 +1,24 @@
+mixin modal-form()
+  form(action="#" method="POST").form
+    .form__wrapper
+      .form__header
+        h2.form__title Create new item
+      .form__body
+        .form__input-container
+          label(for="name").form__input-title Name:
+          input(type="text", name="name", id="name", required)
+        .form__input-container
+          p.form__input-title Image:
+          input(type="file", name="file", id="file").visually-hidden.form__file
+          label(for="file").form__file-wrapper
+            span.form__file-fake No files
+            span.form__file-btn Choose
+        .form__input-container
+          label(for="description").form__input-title Description:
+          textarea(name="description", id="description", placeholder="Text area", required)
+        .form__input-container
+          input(type="checkbox", name="show", id="show").visually-hidden
+          label(for="show") show
+        .form__btn-container
+          button(type="submit", disabled).btn.btn-reset.btn--green.btn--disabled.btn--submit OK
+          button(type="button").btn.btn-reset.btn--pink.modal__close-btn Cancel
